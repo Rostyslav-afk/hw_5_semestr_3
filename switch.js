@@ -44,19 +44,19 @@ switch (whatDay.toLowerCase().trim()) {
 
 // Створіть змінну для зберігання номера місяця. За номером місяця визначайте пору року і виводьте відповідне повідомлення.
 
-const whatMonth = Number(prompt("Напишіть який місяць (1-12)"));
+const whatMonth = Number(prompt("Напишіть, який місяць (1-12)"));
 
-switch (whatMonth.trim()) {
-    case 1, 2:
+switch (whatMonth) {
+    case 1 || 2:
         alert("Зима")
         break;
-    case 3, 4, 5:
+    case 3 || 4 || 5:
         alert("Весна")
         break;
-    case 6, 7, 8:
+    case 6 || 7 || 8:
         alert("Літо")
         break;
-    case 9, 10, 11:
+    case 9 || 10 || 11:
         alert("Осінь")
         break;
     case 12:
@@ -86,10 +86,29 @@ switch (whatColor.toLowerCase().trim()) {
 
 
 // Створіть змінні для зберігання двох чисел та оператора (як у списку select). Виконайте відповідну операцію та виведіть результат. У випадку ділення на нуль — виведіть попередження.
-const a = 6;
-const b = 2;
-if (a / b) {
-    alert("Все правильно!")
-} else {
-    alert("Попередження!")
+const num1 = Number(prompt("Введіть перше число"));
+const num2 = Number(prompt("Введіть друге число"));
+let whatOperations = prompt("Виберіть операцію (+, -, *, /)")
+let result;
+
+switch (whatOperations) {
+    case "+":
+        result = num1 + num2;
+        alert("Ваша відповідь: " + result);
+        break;
+    case "-":
+        result = num1 - num2;
+        alert("Ваша відповідь: " + result);
+        break;
+    case "*":
+        result = num1 * num2;
+        alert("Ваша відповідь: " + result);
+        break;
+    case "/":
+        if (num2 === 0) {
+            alert("Ділення на 0 неможливе!");
+        } else {
+            result = num1 / num2;
+            alert("Ваша відповідь: " + result);
+        }
 }
